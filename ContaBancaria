@@ -1,0 +1,68 @@
+public class ContaBancaria {
+
+	//atributos
+	protected String cliente;
+	protected String NumConta;
+	protected double saldo;
+	
+	//construtor
+	public ContaBancaria(String cliente, String NumConta, double saldo) {
+		this.cliente = cliente;
+		this.NumConta = NumConta;
+		this.saldo = saldo;
+	}
+	
+	//CLIENTE
+	public String getCliente() {
+		return cliente;
+	}
+	
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
+	
+	//NUMEROCONTA
+	public String getNum(String NumConta) {
+		return NumConta;
+	}
+	
+	public void setNum(String NumConta) {
+		this.NumConta = NumConta;
+	}
+	
+	//SALDO
+	public double getSaldo() {
+		return saldo;
+	}
+	
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	
+	//metodo sacar
+	public void Sacar(double valor) {
+		if (valor < 0) {
+			System.out.printf("Não foi possivel sacar, saldo negativo!");
+		} else if(saldo-valor >= 0) {
+			saldo -= valor;
+			System.out.printf("Saque de R$ %.2f realizado com sucesso.\n \nConta atualizada : R$ %.2f\n", valor, saldo);
+		} else {
+			System.out.println("Não foi possivel sacar");
+		}
+	}
+	
+	//metodo depositar
+	public void Depositar(double valor) {
+		saldo = saldo + valor;
+		System.out.printf("Deposito de R$ %.2f realizado com sucesso\n \nConta atualizada : R$ %.2f\n", valor, saldo);
+	}
+	
+	
+	@Override
+    public String toString() {
+        return "\nCliente: " + cliente 
+        		+ "\nNúmero da Conta: " + NumConta 
+        		+ "\nSaldo: R$ " + saldo;
+    }
+
+}
