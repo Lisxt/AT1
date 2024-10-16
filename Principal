@@ -1,0 +1,60 @@
+import java.util.Scanner;
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		 Scanner sc = new Scanner(System.in);
+		 
+		     // Criando uma conta poupança
+			 ContaPoupanca contaP = new ContaPoupanca("Alice","0711-05", 0, 2);
+
+			 // Criando uma conta especial
+			 ContaEspecial contaE = new ContaEspecial("Simone","1506-76", 0, 500);
+			 
+			 // Exibindo os dados utilizando o método toString()
+			 System.out.printf("\n*-------------------------------------------------------*\n");
+		        System.out.println("Dados da conta poupança de Alice:");
+		        System.out.println(contaP);
+
+		        System.out.println("\nDados da conta especial de Simone:");
+		        System.out.println(contaE);      
+		     
+		     System.out.printf("\n*-------------------------------------------------------*\n");
+		     	
+		     	//Operações na conta poupança
+		     
+		        System.out.println("\nDeposito de R$100 na conta de Alice:\n");
+		        contaP.Depositar(100);
+		        System.out.println(contaP);
+		        
+		     System.out.printf("\n*-------------------------------------------------------*\n");  
+
+		        System.out.println("\nSaque de R$60 na conta de Alice:\n");
+		        contaP.Sacar(60);
+		        System.out.println(contaP);
+		    
+		     System.out.printf("\n*-------------------------------------------------------*\n");
+		     
+		     //Cálculo do novo saldo da conta poupança com rendimento
+		     
+		        System.out.println("\nCalculando novo saldo da poupança de Alice com rendimento de 2%:");
+		        contaP.calcularNovoSaldo(2);
+		        System.out.println(contaP);
+
+		    System.out.printf("\n*-------------------------------------------------------*\n");  
+		    
+		     //Operações na conta especial
+		    
+		        System.out.println("\nDepósito de R$200 na conta de Simone:\n");
+		        contaE.Depositar(200);
+		        System.out.println(contaE);
+		        contaE.Sacarlimite(400);
+		        System.out.println(contaE);
+		        
+		    System.out.printf("\n*-------------------------------------------------------*\n");
+
+		 sc.close();
+		 
+	}
+
+}
