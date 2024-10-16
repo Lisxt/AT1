@@ -1,0 +1,22 @@
+public class ContaPoupanca extends ContaBancaria{
+	
+	//atributo
+	private double diaRendimento;
+	
+	//construtor
+	public ContaPoupanca(String cliente, String NumConta, double saldo, double diaRendimento) {
+		super(cliente, NumConta, saldo);
+		this.diaRendimento = diaRendimento;
+	}
+	
+	//metodo
+	
+	public void calcularNovoSaldo(double diaRendimento) {
+		saldo = saldo + (saldo * (diaRendimento / 100));
+	}
+	
+	@Override
+    public String toString() {
+        return super.toString() + "\nDia de Rendimento: " + diaRendimento;
+    }
+}
